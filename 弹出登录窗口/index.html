@@ -3,8 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #login-header {
+            width: 100%;
+            height: 30px;
+            font-size: 24px;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .login {
+            width: 512px;
+            position: absolute;
+            border: #ebebeb solid 1px;
+            height: 280px;
+            left: 50%;
+            right: 50%;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px #ddd;
+            z-index: 1;
+            margin-left: -256px;
+            margin-top: 140px;
+            display: none;
+        }
+
+        .login-title {
+            width: 100%;
+            margin: 10px 0 0 0;
+            text-align: center;
+            line-height: 40px;
+            font-size: 18px;
+            position: relative;
+            cursor: move;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .login-input-content {
+            margin-top: 20px;
+        }
+
+        .login-button {
+            width: 50%;
+            margin: 10px auto 0 auto;
+            line-height: 40px;
+            font-size: 14px;
+            border: #ebebeb 1px solid;
+            text-align: center;
+        }
+
+        .login-bg {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #000;
+            filter: alpha(opacity=30);
+            opacity: 0.3;
+            display: none;
+        }
+
+        .login-input {
+            overflow: hidden;
+            margin: 0 0 20px 0;
+        }
+
+        .login-button a {
+            display: block;
+        }
+
+        .close-login {
+            cursor: pointer;
+            display: block;
+        }
+
+        .login-input input.list-input {
+            float: left;
+            line-height: 35px;
+            height: 35px;
+            width: 350px;
+            border: #ebebeb 1px solid;
+            text-indent: 5px;
+            outline: none;
+        }
+
+        .login-input label {
+            float: left;
+            width: 90px;
+            padding-right: 10px;
+            text-align: right;
+            line-height: 35px;
+            height: 35px;
+            font-size: 14px;
+        }
+
+        .login-title span {
+            position: absolute;
+            font-size: 12px;
+            right: -20px;
+            top: -30px;
+            background-color: #ffffff;
+            border: #ebebeb solid 1px;
+            width: 40px;
+            height: 40px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+        }
+
+
+    </style>
 </head>
 <body>
+<div id="login-header"><a href="#" id="link">点击,弹出登录框</a></div>
+<div id="login" class="login">
+    <div id="title" class="login-title">登录会员
+        <span id="closeBtn"><a href="#" class="close-login">关闭</a></span>
+    </div>
+    <div class="login-input-content">
+        <div class="login-input">
+            <label>用户名:</label>
+            <input type="text" placeholder="请输入用户名" id="username" class="list-input">
+        </div>
+        <div class="login-input">
+            <label>密码:</label>
+            <input type="password" placeholder="请输入密码" id="password" class="list-input">
+        </div>
+    </div>
+    <div id="loginBtn" class="login-button" id="login-button-submit">登录会员</div>
+</div>
+<!--遮盖层-->
+<div id="bg" class="login-bg"></div>
+<script src="../js/common.js"></script>
+<script>
 
+    //点击显示登录框和遮盖层
+    var login = $('login');
+    var bg = $('bg');
+    var link = $('link');
+    link.onclick = function () {
+        login.style.display = 'block';
+        bg.style.display = 'block';
+        return false;
+    }
+
+    //点击关闭隐藏
+    var closeBtn = $('closeBtn');
+    closeBtn.onclick = function () {
+        login.style.display = 'none';
+        bg.style.display = 'none';
+    }
+
+
+</script>
 </body>
 </html>
