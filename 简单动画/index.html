@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/common.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            position: absolute;
+        }
+
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            top: 140px;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="400" id="btn">
+    <input type="button" value="800" id="btn1">
+    <div id="box">
+    </div>
+    <div id="box2">
+
+    </div>
+    <script>
+        var btn = $('btn');
+        var btn1 = $('btn1');
+        var box = $('box');
+        var box2 = $('box2');
+
+
+
+        btn.onclick = function () {
+            animate(box, 400);
+            animate(box2, 400);
+        };
+
+        btn1.onclick = function () {
+            animate(box, 800);
+            animate(box2, 800);
+        }
+
+        function animate(element, target) {
+            if (element.timerId) {
+                clearInterval(element.timerId);
+                timerId = null;
+            }
+            var offset = 10;
+            element.timerId = setInterval(() => {
+
+                var step = 10;
+
+                var current = element.offsetLeft;
+
+                if (current > target) {
+                    step = -Math.abs(step);
+                }
+
+                if (Math.abs(current - target) < Math.abs(step)) {
+
+                    clearInterval(element.timerId);
+
+                    element.style.left = target + 'px';
+
+                    return;
+                }
+
+                current += step;
+                element.style.left = current + 'px';
+            }, 30);
+
+        }
+    </script>
+</body>
+
+</html>
