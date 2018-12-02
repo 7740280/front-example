@@ -1,0 +1,376 @@
+.go {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    z-index: 1;
+}
+
+.section1 {
+    background: #fadd67 url("../images/第一屏/page1.png") no-repeat center bottom;
+}
+
+.fly {
+    position: absolute;
+    right: 20%;
+    top: 10%;
+}
+
+.sofa {
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    bottom: 350px;
+}
+
+.goods {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section2 {
+    background: #84a2d4 url("../images/第二屏/page2.png") no-repeat center bottom;
+}
+
+.computer {
+    width: 600px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
+}
+
+.words-01 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+}
+
+.words-02 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+    opacity: 0;
+}
+
+.search {
+    width: 222px;
+    height: 45px;
+    background: url('../images/第二屏/search.png');
+    position: absolute;
+    right: 0px;
+    margin-right: -230px;
+    bottom: 320px;
+    display: none;
+}
+
+.search-words {
+    position: absolute;
+    right: 20px;
+    top: 3px;
+    opacity: 0;
+}
+
+.search-words-02 {
+    position: absolute;
+    bottom: 320px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+.goods-441 {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    height: 100px;
+    display: none;
+}
+
+.sofa-01 {
+    position: absolute;
+    bottom: 345px;
+    left: 200px;
+    width: 100px;
+    display: none;
+    z-index: 100;
+}
+
+.cover {
+    position: absolute;
+    width: 101px;
+    height: 99px;
+    bottom: 334px;
+    left: 200px;
+    z-index: 5;
+    background-color: #fff;
+    display: none;
+}
+
+/*第三屏开始*/
+.section3 {
+    background: #ef674d;
+    z-index: -1;
+}
+
+.main {
+    position: absolute;
+    width: 700px;
+    height: 500px;
+    background: url("../images/第三屏/main.png") no-repeat center center;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.img-3-1 {
+    position: absolute;
+    bottom: 120px;
+    right: 10px;
+}
+
+.img-3-2 {
+    position: absolute;
+    bottom: 120px;
+    right: 10px;
+    opacity: 0;
+}
+
+.btn-3-1 {
+    position: absolute;
+    bottom: 20px;
+    right: 80px;
+}
+
+.btn-3-2 {
+    position: absolute;
+    bottom: 20px;
+    right: 80px;
+    opacity: 0;
+}
+
+/*第三屏结束*/
+/*第四屏开始*/
+
+.section4 {
+    background: #fed url("../images/第四屏/page4.png") no-repeat center bottom;
+}
+
+.words-4-01 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 500px;
+}
+
+.words-4-02 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 500px;
+    opacity: 0;
+}
+
+.cloud {
+    position: absolute;
+    left: 50%;
+    bottom: 550px;
+}
+
+.car {
+    position: absolute;
+    width: 500px;
+    bottom: 50px;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.car-sofa {
+    position: absolute;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    display: none;
+}
+
+.sofa-02,
+.t1f {
+    position: absolute;
+    left: 120px;
+    bottom: 160px;
+    display: none;
+    z-index: 1000;
+}
+
+.note {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 200px;
+    display: none;
+}
+
+.note-img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 60%;
+    opacity: 0;
+}
+
+/*第四屏结束*/
+/*第五屏开始*/
+
+.section5 {
+    background: #d04759 url(../images/第五屏/page5.png);
+}
+
+.card-05 {
+    position: absolute;
+    left: 20%;
+    bottom: 20%;
+    z-index: 2;
+}
+
+.words-05 {
+    position: absolute;
+    top: 10px;
+    left: 20%;
+    opacity: 0;
+}
+
+.order-05 {
+    position: absolute;
+    left: 30%;
+    bottom: 30%;
+    z-index: 1;
+}
+
+.t1f-05 {
+    position: absolute;
+    z-index: 100;
+    left: 28%;
+    top: -20%;
+    display: none;
+    z-index: 1;
+}
+
+.overfolw {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.mouse-05 {
+    position: absolute;
+    right: 20%;
+    bottom: 200px;
+}
+
+.mouse-05-a {
+    opacity: 0;
+}
+
+.hand-05 {
+    position: absolute;
+    right: 24%;
+    bottom: -375px;
+}
+
+/*第五屏结束*/
+
+/*第六屏开始*/
+.section6{
+    background: #84d9ed url(../images/第六屏/page6.png) no-repeat 25% 100%;
+
+}
+/*第六屏结束*/
+/*动画组*/
+
+@keyframes fly {
+    0% {
+        top: 10%;
+    }
+
+    50% {
+        top: 25%;
+    }
+
+    100% {
+        top: 10%;
+    }
+}
+
+@keyframes sofa-fly {
+    0% {
+        bottom: 350px;
+    }
+
+    50% {
+        bottom: 380px;
+    }
+
+    100% {
+        bottom: 350px;
+    }
+}
+
+@keyframes cloud-back {
+    0% {
+        left: 50%;
+    }
+
+    50% {
+        left: -10%;
+    }
+
+    100% {
+        left: 50%;
+    }
+}
+
+@keyframes words5 {
+    100% {
+        opacity: 1;
+        transform: translateZ(100px) rotateY(360deg);
+    }
+}
+
+.updown {
+    animation: fly 2s ease-in-out 0s infinite;
+}
+
+.sofa-fly {
+    animation: sofa-fly 1s ease-in-out 0s infinite;
+}
+
+.cloud-back {
+    animation: cloud-back 60s linear infinite;
+}
+
+.words-05-a {
+    animation: words5 3s forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -7,14 +7,206 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="../js/common.js"></script>
+    <script src="../js/animate.js"></script>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            border: 0;
+        }
 
+        .all {
+            width: 500px;
+            height: 200px;
+            padding: 7px;
+            border: 1px solid #cccccc;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .screen {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen ul {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3000px;
+        }
+
+        .screen li {
+            width: 500px;
+            height: 200px;
+            /*overflow: hidden;*/
+            float: left;
+        }
+
+        .all ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .all ol li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border: 1px solid #cccccc;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .all ol li.current {
+            background-color: yellow;
+        }
+
+        #arr {
+            display: none;
+        }
+
+        #arr span {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background-color: #000000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #ffffff;
+            opacity: .3;
+            border: 1px solid #ffffff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
     </style>
 </head>
-
 <body>
+<div id="box" class="all">
+    <div class="screen">
+        <ul>
+            <li><img src="images/wf1.jpg" alt=""></li>
+            <li><img src="images/wf2.jpg" alt=""></li>
+            <li><img src="images/wf3.jpg" alt=""></li>
+            <li><img src="images/wf4.jpg" alt=""></li>
+            <li><img src="images/wf5.jpg" alt=""></li>
+        </ul>
+        <ol></ol>
+    </div>
+    <div id="arr">
+        <span id="left">&lt;</span>
+        <span id="right">&gt;</span>
+    </div>
+</div>
+<script>
+    var box = $('box');
+    var screen = box.children[0];
+    var ul = screen.children[0];
+    var ol = screen.children[1];
 
+    var arr = $('arr');
+    var left = $('left');
+    var right = $('right');
+    //图片宽度
+    var imgWidth = screen.offsetWidth;
+    //第一张图片索引
+    var index = 0;
+    //求图片个数
+    var count = ul.children.length;
 
+    //克隆元素
+    var firstLi = ul.children[0];
+    var cloneLi = firstLi.cloneNode(true);
+    ul.appendChild(cloneLi);
+
+    for (let i = 0; i < count; i++) {
+        var li = document.createElement('li');
+        li.innerText = i + 1;
+        ol.appendChild(li);
+        if (i === 0) {
+            li.className = 'current'
+        }
+
+        li.onclick = liClick;
+        li.setAttribute('index', i);
+    }
+
+    //取消其他li高亮,让当前li高亮显示
+    function liClick() {
+        for (let i = 0; i < count; i++) {
+            var li = ol.children[i];
+            li.className = '';
+        }
+        this.className = 'current';
+
+        var liIndex = parseInt(this.getAttribute('index'));
+        animate(ul, -liIndex * imgWidth);
+        index = liIndex;
+    }
+
+    //鼠标放到盒子上显示箭头
+    box.onmouseenter = function () {
+        arr.style.display = 'block';
+        clearInterval(timerId);
+    };
+
+    box.onmouseleave = function () {
+        arr.style.display = 'none';
+        timerId = setInterval(() => {
+            right.click();
+        }, 2000)
+    };
+
+    //上一张
+    left.onclick = function () {
+        if (index === 0) {
+            index = count;
+            ul.style.left = -index * imgWidth + 'px';
+        }
+
+        index--;
+        ol.children[index].click();
+    };
+    //下一张
+    right.onclick = function () {
+        if (index === count) {
+            ul.style.left = '0px';
+            index = 0;
+        }
+
+        index++;
+        if (index < count) {
+            ol.children[index].click();
+        } else {
+            animate(ul, -index * imgWidth);
+            for (let i = 0; i < ol.children.length; i++) {
+                var li = ol.children[i];
+                li.className = '';
+            }
+            ol.children[0].className = 'current';
+        }
+    };
+
+    //自动播放
+    var timerId = setInterval(() => {
+        right.click();
+    }, 2000)
+</script>
 </body>
-
 </html>

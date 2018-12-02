@@ -55,17 +55,17 @@
         btn1.onclick = function () {
             animate(box, 800);
             animate(box2, 800);
-        }
+        };
 
         function animate(element, target) {
             if (element.timerId) {
                 clearInterval(element.timerId);
                 timerId = null;
             }
-            var offset = 10;
-            element.timerId = setInterval(() => {
 
-                var step = 10;
+            var step = 10;
+
+            element.timerId = setInterval(() => {
 
                 var current = element.offsetLeft;
 
