@@ -59,6 +59,14 @@ a:hover {
     content: '\e93e';
 }
 
+.wjs_icon_dollar {
+
+}
+
+.wjs_icon_dollar::before {
+    content: '\e903';
+}
+
 /*modal css*/
 .wjs_topBar {
     border-bottom: 1px solid #ccc;
@@ -248,7 +256,7 @@ fieldset[disabled] .wjs_nav .btn-link:focus {
 }
 
 /*nav end*/
-.wjs_banner .pc_imgBox{
+.wjs_banner .pc_imgBox {
     display: block;
     width: 100%;
     height: 400px;
@@ -257,14 +265,42 @@ fieldset[disabled] .wjs_nav .btn-link:focus {
     background-position: center;
 }
 
-.wjs_banner .m_imgBox{
+.wjs_banner .m_imgBox {
     display: block;
     width: 100%;
 }
 
-.wjs_banner .m_imgBox img{
+.wjs_banner .m_imgBox img {
     display: block;
     width: 100%;
 }
 
+/*banner end*/
 
+.wjs_info {
+    border-bottom: 1px solid #cccccc;
+}
+
+.wjs_info .container {
+    width: 900px;
+}
+
+/*防止出现滚动条*/
+@media (min-width: 768px) and (max-width: 992px) {
+    .wjs_info > .container {
+        width: 750px;
+    }
+}
+
+.wjs_info > .container > div > a {
+    display: block;
+    padding: 20px 0px;
+}
+
+.wjs_info > .container > div a:hover {
+    color: #e92322;
+}
+
+.wjs_info > .container > div .wjs_icon_dollar {
+    font-size: 30px;
+}
