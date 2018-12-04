@@ -67,6 +67,19 @@ a:hover {
     content: '\e903';
 }
 
+.wjs_icon_clock{
+    font-size: 20px;
+}
+
+.wjs_icon_clock::before{
+    content: '\e906'
+}
+
+.wjs_icon_video::before{
+    content: '\e905';
+
+}
+
 /*modal css*/
 .wjs_topBar {
     border-bottom: 1px solid #ccc;
@@ -303,4 +316,39 @@ fieldset[disabled] .wjs_nav .btn-link:focus {
 
 .wjs_info > .container > div .wjs_icon_dollar {
     font-size: 30px;
+}
+
+/*info end*/
+
+.wjs_book{
+    padding: 40px;
+}
+
+.wjs_book > .container{
+    width: 900px;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .wjs_book > .container{
+        width: 700px;
+    }
+}
+
+@media  (max-width: 768px) {
+    .wjs_book > .container{
+        width: 100%
+    }
+}
+
+.wjs_book .book{
+    color: #e92322;
+    border-bottom: 1px dashed #e92322;
+}
+
+.wjs_book .book:hover{
+    color: #e92322;
+}
+
+.wjs_book  .video:hover{
+    color: #e92322;
 }
